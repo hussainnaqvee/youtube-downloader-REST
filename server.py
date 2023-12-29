@@ -17,7 +17,8 @@ def download(link):
     for url in p.video_urls:
         print(url)
         youtube_object = YouTube(url, use_oauth=True, allow_oauth_cache=True)
-        youtube_object.bypass_age_gate("ANDROID") ##bypass_age_gate function might be changed
+        youtube_object.bypass_age_gate()
+        #youtube_object.bypass_age_gate("ANDROID") bypass_age_gate function might be changed
         print(youtube_object.title)
         youtube_object = youtube_object.streams.get_highest_resolution()
 
